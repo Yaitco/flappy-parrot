@@ -15,6 +15,8 @@ class PhysicalObject(pyglet.sprite.Sprite):
 
         # Флаг на удаление объекта
         self.is_dead = False
+        
+        self.event_handlers = []
 
     def update(self, dt) -> None:
         # Обновляем положение объекта взависимости от скорости и времени
@@ -26,15 +28,13 @@ class PhysicalObject(pyglet.sprite.Sprite):
             return False
         if self.is_pipe and not other.reacts_to_pipe:
             return False
-        
-        collision_distance = self.image.width * 0.5 * self.scale \
-                             + other.image.width * 0.5 * other.scale
-        
-        actual_distance = util.distance(self.position, other.position)
 
-        return (actual_distance <= collision_distance)
+        return util.is_rect_sect(self.get_rect(), other.get_rect())
+
+    def get_rect(self):
+        return ((self.x - self.width / 2, self.y - self.height / 2), (self.x + self.width / 2, self.y + self.height / 2))
     
     def handle_collision_with(self, other_object):
         if other_object.__class__ is not self.__class__:
-            self.dead = True
+            self.is_dead = True
 
