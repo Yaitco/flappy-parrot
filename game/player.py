@@ -30,3 +30,4 @@ class Player(physicalobject.PhysicalObject):
 
     def jump(self):
         self.velocity_y = self.jump_speed
+        resources.jump_sound.play()

@@ -20,3 +20,6 @@ util.center_image(player_image)
 # player_image.anchor_x = player_image.width / 2
 # player_image.anchor_y = player_image.height / 2
 
+sound = pyglet.media.Player
+jump_sound = pyglet.resource.media("jump_sound.wav", streaming=False)
+death_sound = pyglet.resource.media("death_sound.wav", streaming=False)

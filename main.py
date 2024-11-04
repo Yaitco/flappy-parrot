@@ -1,4 +1,4 @@
-from game import load, util, player
+from game import load, util, player, resources
 from game.window import game_window
 import pyglet
 
@@ -86,6 +86,7 @@ def update(dt):
     score_label.text = "Score: " + str(int(score))
 
     if player_dead:
+        resources.death_sound.play()
         reset_level()
         
 
