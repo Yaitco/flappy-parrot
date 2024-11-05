@@ -16,6 +16,12 @@ def init():
     score_label.text = "Score: " + str(int(score))
     pyglet.clock.schedule_interval(push_pipe, 1.5)
     player_ship = player.Player(x=game_window.width//2, y=game_window.height//2, batch=main_batch)
+
+    resources.background.x = 0
+    resources.background.y = 0
+    resources.background.scale_x = game_window.width / resources.background.width
+    resources.background.scale_y = game_window.height / resources.background.height
+
     game_objects.append(player_ship)
     for obj in game_objects:
         for handler in obj.event_handlers:
@@ -44,6 +50,7 @@ def reset_level():
 @game_window.event
 def on_draw():
     game_window.clear()
+    resources.background.draw()
     main_batch.draw()
     counter.draw()
 
