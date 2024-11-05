@@ -14,12 +14,14 @@ util.center_image(lower_pipe_image)
 # lower_pipe_image.anchor_x = lower_pipe_image.width / 2
 # lower_pipe_image.anchor_y = lower_pipe_image.height
 
-player_image = pyglet.resource.image("blue_circle.png")
+player_image = pyglet.resource.image("попуг.png")
 util.center_image(player_image)
 
-# player_image.anchor_x = player_image.width / 2
-# player_image.anchor_y = player_image.height / 2
+background_image = pyglet.resource.image("фон2.png")
+background = pyglet.sprite.Sprite(background_image)
+#player_image.anchor_x = player_image.width / 2
+#player_image.anchor_y = player_image.height / 2
 
 sound = pyglet.media.Player
-jump_sound = pyglet.resource.media("jump_sound.wav", streaming=False)
-death_sound = pyglet.resource.media("death_sound.wav", streaming=False)
+jump_sound = pyglet.resource.media("звук1.wav", streaming=False)
+death_sound = pyglet.resource.media("смерть.wav", streaming=False)

@@ -8,7 +8,7 @@ class Player(physicalobject.PhysicalObject):
         
         self.scale = 0.25
 
-        self.jump_speed = 350.
+        self.jump_speed = 300.
         self.gravity_speed = 450.
 
         self.reacts_to_pipe = True
