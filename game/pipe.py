@@ -22,7 +22,7 @@ class Pipe(physicalobject.PhysicalObject):
         if self.status == PipeStatus.NOT_PASSED and self.x <= window.game_window.width / 2:
             self.status = PipeStatus.PASSED
         if (self.x <= -self.width / 2):
-            self.dead = True
+            self.is_dead = True
 
     def get_score(self):
         if self.status == PipeStatus.PASSED:

@@ -5,10 +5,10 @@ import pyglet
 main_batch = pyglet.graphics.Batch()
 counter = pyglet.window.FPSDisplay(window=game_window)
 game_objects = []
-score_label = pyglet.text.Label(text="Score: 0", x=10, y=575, batch=main_batch)
+score_label = pyglet.text.Label(text="Score: 0", x=game_window.width * 1/80, y=game_window.height * 23/24, batch=main_batch)
 player_ship = None
 event_stack_size = 0
-score = 0
+score = 0 
 
 def init():
     global game_objects, player_ship, score, score_label
@@ -16,11 +16,6 @@ def init():
     score_label.text = "Score: " + str(int(score))
     pyglet.clock.schedule_interval(push_pipe, 1.5)
     player_ship = player.Player(x=game_window.width//2, y=game_window.height//2, batch=main_batch)
-
-    resources.background.x = 0
-    resources.background.y = 0
-    resources.background.scale_x = game_window.width / resources.background.width
-    resources.background.scale_y = game_window.height / resources.background.height
 
     game_objects.append(player_ship)
     for obj in game_objects:
