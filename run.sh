@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Путь к директории проекта (предполагается, что скрипт запускается из папки с проектом)
+PROJECT_DIR=$(dirname "$(realpath "$0")")
+
+# Переход в директорию проекта
+cd "$PROJECT_DIR"
+
 # Выводим сообщение
 echo "Checking and installing dependencies..."
 
