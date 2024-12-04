@@ -12,7 +12,8 @@ class PhysicalObject(pyglet.sprite.Sprite):
         # Флаги на коллизию с трубами
         self.reacts_to_pipe = True
         self.is_pipe = False
-
+        self.hitbox_height = self.height
+        self.hitbox_width = self.width
         # Флаг на удаление объекта
         self.is_dead = False
         
@@ -32,7 +33,7 @@ class PhysicalObject(pyglet.sprite.Sprite):
         return util.is_rect_sect(self.get_rect(), other.get_rect())
 
     def get_rect(self):
-        return ((self.x - self.width / 2, self.y - self.height / 2), (self.x + self.width / 2, self.y + self.height / 2))
+        return ((self.x - self.hitbox_width / 2, self.y - self.hitbox_height / 2), (self.x + self.hitbox_width / 2, self.y + self.hitbox_height / 2))
     
     def handle_collision_with(self, other_object):
         if other_object.__class__ is not self.__class__:

@@ -1,5 +1,4 @@
-import math
-import random
+import math, random
 from game.window import game_window
 from game import const
 
