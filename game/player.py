@@ -10,8 +10,8 @@ class Player(physicalobject.PhysicalObject):
         self.scale = 0.25
         self.rotation = 33
         
-        self.jump_speed = 300.
-        self.gravity_speed = 450.
+        self.jump_speed = 300. * 1.3
+        self.gravity_speed = 450. * 1.7
         
         self.hitbox_height = 30
         self.hitbox_width = 20

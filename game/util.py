@@ -6,14 +6,14 @@ def distance(point_1=(0, 0), point_2=(0, 0)) -> float:
     """Returns the distance between two points"""
     return math.sqrt((point_1[0] - point_2[0]) ** 2 + (point_1[1] - point_2[1]) ** 2)
 
-def is_rect_sect(rect1 = ((0, 0), (0, 0)), rect2 = ((0, 0), (0, 0))):
+def is_rect_sect(rect1=((0, 0), (0, 0)), rect2=((0, 0), (0, 0))):
     return is_seg_sect_seg((rect1[0][0], rect1[1][0]), (rect2[0][0], rect2[1][0])) and \
            is_seg_sect_seg((rect1[0][1], rect1[1][1]), (rect2[0][1], rect2[1][1]))
 
-def is_seg_sect_seg(seg1 = (0, 0), seg2 = (0, 0)):
+def is_seg_sect_seg(seg1=(0, 0), seg2=(0, 0)):
     return not(seg1[1] <= seg2[0] or seg2[1] <= seg1[0])
 
-def is_dot_in_seg(dot = 0, seg = (0, 0)):
+def is_dot_in_seg(dot=0, seg=(0, 0)):
     return seg[0] <= dot <= seg[1]
 
 def center_image(image):
